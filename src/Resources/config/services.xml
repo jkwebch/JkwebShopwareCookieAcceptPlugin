@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Jkweb\Shopware\Plugin\CookieAccept\Framework\Cookie\CustomCookieProvider"
+                 decorates="Shopware\Storefront\Framework\Cookie\CookieProviderInterface">
+            <argument type="service"
+                      id="Jkweb\Shopware\Plugin\CookieAccept\Framework\Cookie\CustomCookieProvider.inner"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Jkweb\Shopware\Plugin\CookieAccept\Subscriber\StorefrontRenderSubscriber">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+
+        <service id="Jkweb\Shopware\Plugin\CookieAccept\Resources\snippet\de_DE\SnippetFile_de_DE" public="true">
+            <tag name="shopware.snippet.file"/>
+        </service>
+
+        <service id="Jkweb\Shopware\Plugin\CookieAccept\Resources\snippet\en_GB\SnippetFile_en_GB" public="true">
+            <tag name="shopware.snippet.file"/>
+        </service>
+
+        <service id="Jkweb\Shopware\Plugin\CookieAccept\Resources\snippet\fr_FR\SnippetFile_fr_FR" public="true">
+            <tag name="shopware.snippet.file"/>
+        </service>
+    </services>
+</container>

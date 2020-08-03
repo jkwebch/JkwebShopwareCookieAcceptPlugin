@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+
+        <input-field type="bool">
+            <name>reload</name>
+            <label>Reload page after accept</label>
+            <label lang="de-DE">Seite neuladen nach Akzeptieren</label>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>layout</name>
+            <label>Layout</label>
+            <label lang="de-DE">Layout</label>
+
+            <options>
+                <option>
+                    <id>banner</id>
+                    <name>Cookie Banner</name>
+                    <name lang="de-DE">Cookie Banner</name>
+                </option>
+                <option>
+                    <id>popup</id>
+                    <name>Popup</name>
+                    <name lang="de-DE">Popup</name>
+                </option>
+            </options>
+            <defaultValue>popup</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Advanced</title>
+        <input-field type="textarea">
+            <name>cookies</name>
+            <label>Cookie Config</label>
+            <placeholder>[{
+    "snippet_name": "cookie name",
+    "snippet_description": "cookie description",
+    "cookie": "cookie-key",
+    "value": "cookie value",
+    "expiration": 30
+}, {
+    "snippet_name": "cookie group name",
+    "snippet_description": "cookie group description",
+    "entries": [{
+        "snippet_name": "cookie name 2",
+        "cookie": "cookie-key-2",
+        "value": "cookie value 2",
+        "expiration": 30
+    }, {
+        "snippet_name": "cookie name 3",
+        "cookie": "cookie-key-3",
+        "value": "cookie value 3",
+        "expiration": 30
+    }]
+}]</placeholder>
+        </input-field>
+    </card>
+</config>

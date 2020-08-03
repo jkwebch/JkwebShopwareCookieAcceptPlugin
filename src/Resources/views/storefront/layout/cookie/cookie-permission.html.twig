@@ -1,0 +1,59 @@
+{% sw_extends '@Storefront/storefront/layout/cookie/cookie-permission.html.twig' %}
+
+{% block layout_cookie_permission_inner %}
+    {% if cookieAcceptLayout == 'popup' %}
+        <div data-cookie-permission="true">
+            <div
+                class="cookie-permission-container-big">
+                <div class="cookie-permission-inner">
+                    {% block layout_cookie_permission_inner_content %}
+                        <div class="text">
+                            {{ "cookie.message"|trans({
+                                '%url%': path('frontend.cms.page', { id: shopware.config.core.basicInformation.privacyPage })
+                            })|raw }}
+                        </div>
+                    {% endblock %}
+                    <span class="js-cookie-accept-button">
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        {{ "cookie.accept"|trans|sw_sanitize }}
+                        <span class="js-cookie-accept-button-loading-indicator"></span>
+                    </button>
+                </span>
+
+                    <div class="row smaller-text">
+                        <div class="col text-left">
+                            <a class="cookie-permission-button js-cookie-permission-button">
+                                <button class="no-button">
+                                    {{ "cookie.deny"|trans|sw_sanitize }}
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col text-right">
+                    <span class="js-cookie-configuration-button">
+                        <button class="no-button">
+                            {{ "cookie.configure"|trans|sw_sanitize }}
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block layout_cookie_permission_inner_button_configuration %}
+    {{ parent() }}
+    <span class="js-cookie-accept-button">
+        <button
+            type="submit"
+            class="btn btn-primary">
+            {{ "cookie.accept"|trans|sw_sanitize }}
+            <span class="js-cookie-accept-button-loading-indicator"></span>
+        </button>
+    </span>
+{% endblock %}

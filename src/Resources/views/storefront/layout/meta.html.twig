@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_stylesheet %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        {% if cookieAcceptReload %}
+        window.COOKIE_ACCEPT_RELOAD = 1;
+        {% else %}
+        window.COOKIE_ACCEPT_RELOAD = 0;
+        {% endif %}
+    </script>
+{% endblock %}

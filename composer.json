@@ -1,0 +1,44 @@
+{
+    "name": "jkweb/shopware-cookie-accept-plugin",
+    "description": "A Shopware 6 plugin that adds an 'Accept all' button to the cookie popup",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "jkweb ag",
+            "email": "info@jkweb.ch",
+            "homepage": "https://jkweb.ch",
+            "role": "Manufacturer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jkweb\\Shopware\\Plugin\\CookieAccept\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Jkweb\\Shopware\\Plugin\\CookieAccept\\JkwebShopwareCookieAcceptPlugin",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "label": {
+            "de-DE": "Cookie Accept Plugin",
+            "en-GB": "Cookie Accept Plugin"
+        },
+        "description": {
+            "de-DE": "Ein Shopware 6 Plugin das einen 'Alle akzeptieren' Knopf im Cookie-Popup hinzufügt.",
+            "en-GB": "A Shopware 6 plugin that adds an 'Accept all' button to the cookie popup."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://jkweb.ch/",
+            "en-GB": "https://jkweb.ch/en/"
+        },
+        "supportLink": {
+            "de-DE": "https://jkweb.ch/",
+            "en-GB": "https://jkweb.ch/en/"
+        }
+    },
+    "require": {
+        "shopware/core": "6.*",
+        "shopware/storefront": "6.*"
+    }
+}

@@ -1,0 +1,75 @@
+[data-cookie-permission] {
+    display: none;
+}
+.cookie-permission-container-big {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cookie-permission-inner {
+        background: white;
+        width: 300px;
+        max-width: 100%;
+        padding: 2rem;
+
+        .text {
+            margin-bottom: 2rem;
+        }
+
+        .js-cookie-accept-button {
+            button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .no-button {
+            background: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.8em;
+            opacity: 0.5;
+            text-decoration: underline;
+
+            &:active,&:focus {
+                outline: none;
+            }
+        }
+
+    }
+
+    .cookie-permission-button {
+        button {
+            font-size: 1rem;
+            font-weight: 400;
+            border: none;
+        }
+    }
+
+    .js-cookie-configuration-button {
+        button {
+            text-transform: none;
+            font-size: 1rem;
+            font-weight: 400;
+            border: none;
+
+        }
+    }
+
+    /* JkGoogleTagManager */
+    .js-cookie-accept-button {
+        button {
+            text-transform: none;
+            font-size: 1rem;
+            font-weight: 400;
+            border: none;
+        }
+    }
+}
